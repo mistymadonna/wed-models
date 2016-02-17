@@ -1,17 +1,26 @@
 * {
-  background-color: gray;
+  background-color: #FFD267;
 }
 
 table, tr, td {
-  background-color: green;
-  border: 5px solid blue;
+  background-color: #FF8200;
+  border: 5px solid #860000;
   /*border-radius: 80px;*/
-  padding: 20px
+  padding: 20px;
 }
 
 td {
   /*border-radius: 25px;*/
-  color: red;
-  background-color: white;
+  color: black;
+  background-color: #E00D00;
   font-family: sans-serif;
+}
+
+h2 {
+  color: black;
+}
+
+
+.location-name{
+  color: #217A2B;
 }
