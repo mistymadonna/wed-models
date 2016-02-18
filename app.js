@@ -128,9 +128,9 @@ var renderAllComments = function() {
 
 function doCommentSubmit(event) {
   console.log(event);
-  event.preventDefault(); 
+  event.preventDefault();
 
-  if (!event.target.says.value || !event.target.who.value) {
+  if (!event.target.says.value || !event.target.who.value) {Rimg
     return alert('You gotta put something here, mamma mia!');
   }
 
