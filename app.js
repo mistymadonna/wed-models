@@ -102,7 +102,6 @@ var ravenna = new PizzaShop('ravenna', ravennaStoreData);
 ravenna.makeTableRow()
 
 
-// Here's the constructor for the individual comments
 var Comment  = function(userName, text) {
   this.userName = userName;
   this.text = text;
@@ -114,8 +113,6 @@ Comment.prototype.render = function() {
   return liEl;
 };
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++
-// Just setting up some variables for DOM access
 var chatList = document.getElementById('chat-list');
 var chatForm = document.getElementById('chat-form');
 var clearChatList = document.getElementById('clear-chat-list');
@@ -124,16 +121,14 @@ var allComments = [];
 
 var renderAllComments = function() {
   chatList.innerHTML = '';
-  allComments.forEach(function(unicorn) {
-    chatList.appendChild(unicorn.render());
+  allComments.forEach(function(pepperoni) {
+    chatList.appendChild(pepperoni.render());
   });
 };
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++
-// This function handles the submission of comments
-function handleCommentSubmit(event) {
+function doCommentSubmit(event) {
   console.log(event);
-  event.preventDefault(); //gotta have it. prevents page reload
+  event.preventDefault(); 
 
   if (!event.target.says.value || !event.target.who.value) {
     return alert('You gotta put something here, mamma mia!');
@@ -156,14 +151,11 @@ function handleCommentSubmit(event) {
   renderAllComments();
 };
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++
-// Event listener for comment submission form
-chatForm.addEventListener('submit', handleCommentSubmit);
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++
-// Event listener for the 'Clear all comments' button
+chatForm.addEventListener('submit', doCommentSubmit);
+
 clearChatList.addEventListener('click', function() {
-  console.log('You just cleared the chat list!');
+  console.log('Bye, Felicia!');
   chatList.innerHTML = '';
   allComments = [];
 });
