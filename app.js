@@ -100,3 +100,70 @@ georgetown.makeTableRow()
 var ravennaStoreData = new StoreData(new TimeSlot(0, 4, 0, 4), new TimeSlot(0, 7, 0, 4), new TimeSlot(2, 15, 1, 4), new TimeSlot(6, 9, 5, 18), new TimeSlot(4, 8, 2, 5), new TimeSlot(2, 4, 3, 11))
 var ravenna = new PizzaShop('ravenna', ravennaStoreData);
 ravenna.makeTableRow()
+
+
+// Here's the constructor for the individual comments
+var Comment  = function(userName, text) {
+  this.userName = userName;
+  this.text = text;
+};
+
+Comment.prototype.render = function() {
+  var liEl = document.createElement('li');
+  liEl.innerHTML = '<img width="100px" src="img/' + this.userName + '.jpg"> <b>' + this.userName + ': </b><em>' + this.text + '</em>';
+  return liEl;
+};
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Just setting up some variables for DOM access
+var chatList = document.getElementById('chat-list');
+var chatForm = document.getElementById('chat-form');
+var clearChatList = document.getElementById('clear-chat-list');
+var allComments = [];
+
+
+var renderAllComments = function() {
+  chatList.innerHTML = '';
+  allComments.forEach(function(unicorn) {
+    chatList.appendChild(unicorn.render());
+  });
+};
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++
+// This function handles the submission of comments
+function handleCommentSubmit(event) {
+  console.log(event);
+  event.preventDefault(); //gotta have it. prevents page reload
+
+  if (!event.target.says.value || !event.target.who.value) {
+    return alert('You gotta put something here, mamma mia!');
+  }
+
+  var commenter = event.target.who.value;
+  var remark = event.target.says.value;
+
+  if (commenter === 'Ballard') {
+    remark = 'I\'m fancy!!!!';
+  }
+
+  var newComment = new Comment(commenter, remark);
+
+  console.log('Comment by ' + event.target.who.value + ' at ' + Date());
+  event.target.who.value = null;
+  event.target.says.value = null;
+
+  allComments.push(newComment);
+  renderAllComments();
+};
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Event listener for comment submission form
+chatForm.addEventListener('submit', handleCommentSubmit);
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Event listener for the 'Clear all comments' button
+clearChatList.addEventListener('click', function() {
+  console.log('You just cleared the chat list!');
+  chatList.innerHTML = '';
+  allComments = [];
+});
