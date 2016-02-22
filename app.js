@@ -4,6 +4,7 @@
 function PizzaShop(locationName, storeData) {
   this.locationName = locationName;
   this.storeData = storeData;
+  this.makeTableRow();
 }
 
 function tableRowMaker(tableId, inputArray) {
@@ -79,39 +80,22 @@ function randomBetween(min, max) {
 
 var ballardStoreData = new StoreData(new TimeSlot(0, 4, 0, 4), new TimeSlot(0, 7, 0, 4), new TimeSlot(2, 15, 1, 4), new TimeSlot(15, 35, 3, 8), new TimeSlot(12, 31, 5, 12), new TimeSlot(5, 20, 6, 11))
 var ballard = new PizzaShop('ballard', ballardStoreData);
-ballard.makeTableRow()
 
 var firstHillStoreData = new StoreData(new TimeSlot(1, 3, 1, 7), new TimeSlot(5, 9, 2, 8), new TimeSlot(2, 13, 1, 6), new TimeSlot(18, 32, 3, 9), new TimeSlot(1, 3, 5, 12), new TimeSlot(8, 20, 6, 16))
 var firstHill = new PizzaShop('firstHill', firstHillStoreData);
-firstHill.makeTableRow()
 
 var theInternationalDistrictStoreData = new StoreData(new TimeSlot(0, 4, 0, 4), new TimeSlot(0, 7, 0, 4), new TimeSlot(5, 15, 0, 4), new TimeSlot(25, 39, 13, 38), new TimeSlot(22, 36, 5, 22), new TimeSlot(5, 21, 16, 31))
 var theInternationalDistrict = new PizzaShop('theInternationalDistrict', theInternationalDistrictStoreData);
-theInternationalDistrict.makeTableRow()
 
 var southlakeUnionStoreData = new StoreData(new TimeSlot(0, 4, 0, 4), new TimeSlot(0, 7, 0, 4), new TimeSlot(5, 15, 0, 4), new TimeSlot(25, 39, 13, 18), new TimeSlot(22, 36, 5, 22), new TimeSlot(5, 21, 16, 31))
 var southlakeUnion = new PizzaShop('southlakeUnion', southlakeUnionStoreData);
-southlakeUnion.makeTableRow()
 
 var georgetownStoreData = new StoreData(new TimeSlot(2, 7, 3, 5), new TimeSlot(3, 8, 3, 9), new TimeSlot(1, 5, 1, 4), new TimeSlot(5, 13, 2, 4), new TimeSlot(22, 41, 15, 42), new TimeSlot(15, 20, 6, 21))
 var georgetown = new PizzaShop('georgetown', georgetownStoreData);
-georgetown.makeTableRow()
 
 var ravennaStoreData = new StoreData(new TimeSlot(0, 4, 0, 4), new TimeSlot(0, 7, 0, 4), new TimeSlot(2, 15, 1, 4), new TimeSlot(6, 9, 5, 18), new TimeSlot(4, 8, 2, 5), new TimeSlot(2, 4, 3, 11))
 var ravenna = new PizzaShop('ravenna', ravennaStoreData);
-ravenna.makeTableRow()
 
-
-var Comment  = function(userName, text) {
-  this.userName = userName;
-  this.text = text;
-};
-
-Comment.prototype.render = function() {
-  var liEl = document.createElement('li');
-  liEl.innerHTML = '<img width="100px" src="img/' + this.userName + '.jpg"> <b>' + this.userName + ': </b><em>' + this.text + '</em>';
-  return liEl;
-};
 //////////////////////
 function handleCustomerOrder(event) {
   console.log(event);
