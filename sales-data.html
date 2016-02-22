@@ -7,6 +7,7 @@
 </head>
 
 <body>
+  <a href="index.html">HOME</a>
   <h1>pizza3001: Houston, we have pizza.</h1>
   <h2>Locations</h2>
   <p class="location-name"><strong>Ballard</strong></p>
@@ -24,31 +25,29 @@
   <h2>Hours</h2>
   <p><strong>8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.</strong></p>
 
-  <!-- <h1>Note: Your possible users are Ballard, First Hill, The International District, Southlake Union, Georgetown and Ravenna.</h1> -->
+  <form id="customerOrder">
+        <fieldset>
+          <legend>Pizza Order Form</legend>
 
-    <!-- <form id="chat-form"> -->
-      <!-- <fieldset>
-        <legend>Pizza Talk</legend>
+          <label for="name">Name: </label>
+          <input name="name" type="text">
 
-        <label for="who">Who: </label>
-        <input name="who" type="text">
+          <label for="mincust">Min. Pizza Order: </label>
+          <input name="mincust" type="text" size="10">
 
-        <label for="says">Comment: </label>
-        <input name="says" type="text" size="50">
+          <label for="maxcust">Max. Pizza Order: </label>
+          <input name="maxcust" type="text" size="10">
 
-        <button id="comment-button" type="submit">Join the Pizza Party!</button>
-      </fieldset>
-    </form>
+          <label for="avgcust">Min. Delivery: </label>
+          <input name="avgcust" type="text" size="10">
 
-    <button id="clear-chat-list">Bye, Felicia!</button>
-
-    <ul id="chat-list"></ul> -->
-
+          <label for="avgcust">Max. Delivery: </label>
+          <input name="avgcust" type="text" size="10">
 
 
-
-
-
+          <button id="send-button" type="submit">Send</button>
+        </fieldset>
+      </form>
 
 
 
@@ -58,15 +57,7 @@
 
 
 
-
-
-
-
-
-
-
-
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 
 </html>

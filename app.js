@@ -112,50 +112,17 @@ Comment.prototype.render = function() {
   liEl.innerHTML = '<img width="100px" src="img/' + this.userName + '.jpg"> <b>' + this.userName + ': </b><em>' + this.text + '</em>';
   return liEl;
 };
+//////////////////////
+function handleCustomerOrder(event) {
+  console.log(event);
+  event.preventDefault(); //gotta have it. prevents page reload
 
-// var chatList = document.getElementById('chat-list');
-// var chatForm = document.getElementById('chat-form');
-// var clearChatList = document.getElementById('clear-chat-list');
-// var allComments = [];
-//
-//
-// var renderAllComments = function() {
-//   chatList.innerHTML = '';
-//   allComments.forEach(function(pepperoni) {
-//     chatList.appendChild(pepperoni.render());
-//   });
-// };
-//
-// function doCommentSubmit(event) {
-//   console.log(event);
-//   event.preventDefault();
-//
-//   if (!event.target.says.value || !event.target.who.value) {Rimg
-//     return alert('You gotta put something here, mamma mia!');
-//   }
-//
-//   var commenter = event.target.who.value;
-//   var remark = event.target.says.value;
-//
-//   if (commenter === 'Ballard') {
-//     remark = 'I\'m fancy!!!!';
-//   }
-//
-//   var newComment = new Comment(commenter, remark);
-//
-//   console.log('Comment by ' + event.target.who.value + ' at ' + Date());
-//   event.target.who.value = null;
-//   event.target.says.value = null;
-//
-//   allComments.push(newComment);
-//   renderAllComments();
-// };
-//
-//
-// chatForm.addEventListener('submit', doCommentSubmit);
-//
-// clearChatList.addEventListener('click', function() {
-//   console.log('Bye, Felicia!');
-//   chatList.innerHTML = '';
-//   allComments = [];
-// });
+  if (!event.target.name.value || !event.target.mincust.value || !event.target.maxcust.value || !event.target.avgcust.value) {
+    return alert('Fields cannot be empty!');
+  }
+
+  new PizzaShop(event.target.name.value, event.target.mincust.value, event.target.maxcust.value, event.target.avgcust.value)
+};
+
+var customerOrder = document.getElementById('customerOrder');
+customerOrder.addEventListener('submit', handleCustomerOrder);
