@@ -1,6 +1,44 @@
-* {
-  background-color: #FFD267;
+@font-face {
+  font-family: 'Industria-Solid';
+  src: url('http://ufonts.com/downloads/28820!936775149') format('truetype')
 }
+
+body {
+    background-color: #68B2F8;
+}
+
+header {
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 30px;
+    font-family:"Helvetica";
+}
+
+h1,h4, p {
+    font-family:"Helvetica";
+    color: #1D0C20;
+}
+#chip {
+        text-align: center;
+
+}
+.title {
+        font-family:"Industria-Solid", Helvetica;
+}
+
+img {
+    max-width: 100%;
+    /*height: auto;
+    width: auto\9; /* ie8 */*/
+}
+
+
+/** {
+  background-color: #FFD267;
+}*/
 table, tr, td {
   background-color: #FF8200;
   border: 5px solid #860000;

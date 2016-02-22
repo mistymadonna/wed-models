@@ -113,49 +113,49 @@ Comment.prototype.render = function() {
   return liEl;
 };
 
-var chatList = document.getElementById('chat-list');
-var chatForm = document.getElementById('chat-form');
-var clearChatList = document.getElementById('clear-chat-list');
-var allComments = [];
-
-
-var renderAllComments = function() {
-  chatList.innerHTML = '';
-  allComments.forEach(function(pepperoni) {
-    chatList.appendChild(pepperoni.render());
-  });
-};
-
-function doCommentSubmit(event) {
-  console.log(event);
-  event.preventDefault();
-
-  if (!event.target.says.value || !event.target.who.value) {Rimg
-    return alert('You gotta put something here, mamma mia!');
-  }
-
-  var commenter = event.target.who.value;
-  var remark = event.target.says.value;
-
-  if (commenter === 'Ballard') {
-    remark = 'I\'m fancy!!!!';
-  }
-
-  var newComment = new Comment(commenter, remark);
-
-  console.log('Comment by ' + event.target.who.value + ' at ' + Date());
-  event.target.who.value = null;
-  event.target.says.value = null;
-
-  allComments.push(newComment);
-  renderAllComments();
-};
-
-
-chatForm.addEventListener('submit', doCommentSubmit);
-
-clearChatList.addEventListener('click', function() {
-  console.log('Bye, Felicia!');
-  chatList.innerHTML = '';
-  allComments = [];
-});
+// var chatList = document.getElementById('chat-list');
+// var chatForm = document.getElementById('chat-form');
+// var clearChatList = document.getElementById('clear-chat-list');
+// var allComments = [];
+//
+//
+// var renderAllComments = function() {
+//   chatList.innerHTML = '';
+//   allComments.forEach(function(pepperoni) {
+//     chatList.appendChild(pepperoni.render());
+//   });
+// };
+//
+// function doCommentSubmit(event) {
+//   console.log(event);
+//   event.preventDefault();
+//
+//   if (!event.target.says.value || !event.target.who.value) {Rimg
+//     return alert('You gotta put something here, mamma mia!');
+//   }
+//
+//   var commenter = event.target.who.value;
+//   var remark = event.target.says.value;
+//
+//   if (commenter === 'Ballard') {
+//     remark = 'I\'m fancy!!!!';
+//   }
+//
+//   var newComment = new Comment(commenter, remark);
+//
+//   console.log('Comment by ' + event.target.who.value + ' at ' + Date());
+//   event.target.who.value = null;
+//   event.target.says.value = null;
+//
+//   allComments.push(newComment);
+//   renderAllComments();
+// };
+//
+//
+// chatForm.addEventListener('submit', doCommentSubmit);
+//
+// clearChatList.addEventListener('click', function() {
+//   console.log('Bye, Felicia!');
+//   chatList.innerHTML = '';
+//   allComments = [];
+// });
